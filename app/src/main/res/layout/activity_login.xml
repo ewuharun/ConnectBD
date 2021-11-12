@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:fillViewport="true"
+        android:isScrollContainer="true">
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:gravity="center"
+
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="@dimen/bangladesh_logo"
+                android:layout_height="@dimen/bangladesh_logo"
+                android:layout_margin="10dp"
+                android:background="@drawable/app_logo"/>
+
+            <EditText
+                android:id="@+id/userId"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_text_size"
+                android:hint="@string/prompt_email"
+                android:textSize="@dimen/text_size"
+
+                android:inputType="text"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_edit_text_border"
+                android:maxLines="1"
+                android:drawablePadding="10dp"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:gravity="center_vertical"
+                android:textColorHint="@color/colorPrimary"
+                android:textColor="@android:color/black"/>
+
+            <EditText
+                android:paddingLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_text_size"
+                android:hint="@string/prompt_password"
+                android:imeActionId="6"
+                android:textSize="@dimen/text_size"
+                android:background="@drawable/ic_edit_text_border"
+                android:drawablePadding="10dp"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+
+                android:singleLine="true"
+                android:gravity="center_vertical"
+                android:textColorHint="@color/colorPrimary"
+                android:textColor="@android:color/black" />
+
+
+            <Button
+                android:id="@+id/signIn"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_size"
+                android:layout_marginTop="16dp"
+                android:padding="5dp"
+
+                android:textColor="@android:color/white"
+                android:background="@drawable/custom_button"
+                android:text="Sign In"
+                android:textAllCaps="false"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/register"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_size"
+                android:layout_marginTop="16dp"
+                android:padding="5dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/custom_button"
+                android:text="Register"
+                android:textAllCaps="false"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+

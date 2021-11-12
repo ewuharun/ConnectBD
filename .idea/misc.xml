@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-anydpi/ic_post.xml" value="0.1" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-anydpi/ic_profile.xml" value="0.1" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-anydpi/ic_user.xml" value="0.1" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/custom_border.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/custom_button.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/custom_button_border.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/custom_button_border2.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/custom_dialog_border.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/gradient.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_account.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_add.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_add_shopping_cart.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_drop_down.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_favorite_border.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_favorite_pink.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_help.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_info.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_language.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_laptop.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_launcher_background.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_mobile.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_newsfeed.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_rate.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_return.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_review.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_sad.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_schedule.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/ic_shopping_cart_white.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/side_nav_bar.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable-hdpi/touch_feedback.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable/badge_border.xml" value="0.19583333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable/circular_progressbar.xml" value="0.1824074074074074" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable/ic_baseline_format_align_justify_24.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable/ic_edit_text_border.xml" value="0.15833333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable/ic_launcher_background.xml" value="0.534375" />
+        <entry key="..\:/ConnectBD/app/src/main/res/drawable/ic_navigation.xml" value="0.1453125" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/activity_product.xml" value="0.14990942028985507" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/badge_border.xml" value="0.14990942028985507" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/badge_layout.xml" value="0.14666666666666667" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/fragment_category.xml" value="0.13333333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/fragment_history.xml" value="0.14990942028985507" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/fragment_post.xml" value="0.10144927536231885" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/fragment_profile.xml" value="0.10144927536231885" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/fragment_user.xml" value="0.10144927536231885" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/item_category_list.xml" value="0.13333333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/item_product_list.xml" value="0.13333333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/number_picker_layout.xml" value="0.15534420289855072" />
+        <entry key="..\:/ConnectBD/app/src/main/res/layout/toolbar.xml" value="0.22" />
+        <entry key="..\:/ConnectBD/app/src/main/res/menu/main_app_bar.xml" value="0.3333333333333333" />
+        <entry key="..\:/ConnectBD/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/ConnectBD/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/ConnectBD/app/src/main/res/xml/network_security_config.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
