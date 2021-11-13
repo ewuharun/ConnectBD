@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +20,10 @@ import com.example.connectbd.Fragment.CategoryFragment;
 import com.example.connectbd.Fragment.ProductFragment;
 import com.example.connectbd.Fragment.HistoryFragment;
 import com.example.connectbd.Fragment.OrderFragment;
+import com.example.connectbd.Listener.BadgeCounterListener;
 import com.example.connectbd.R;
+import com.example.connectbd.SharedPreference.PrefUtil;
+import com.example.connectbd.ViewModel.ProductViewModel;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,20 +31,43 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private ViewPagerAdapter viewPagerAdapter;
-    private TextView tvCartTotalItem;
+    private TextView tvCartTotalItem,badgeCounter;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-
         initView();
+        setToolbar();
         setupViewPager(viewPager);
 
+
+
+
+
+
+
+    }
+
+    private void initListener() {
+
+    }
+
+    private void setToolbar() {
+        toolbar.setTitle("Home");
+        setSupportActionBar(toolbar);
+        ProductViewModel productViewModel = new ProductViewModel(getApplication());
+
+        badgeCounter.setText(String.valueOf(new ProductViewModel(getApplication()).totalProductInCart()));
+
+        productViewModel.setIncrementBadgeListener(new BadgeCounterListener() {
+            @Override
+            public void incrementCounter(int count) {
+                badgeCounter.setText(String.valueOf(count));
+            }
+        });
 
     }
 
@@ -56,13 +84,15 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
 
-            case R.id.shopping: {
+            case R.id.shopping:
                 // Do something
-                Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this,CartActivity.class);
+                startActivity(intent);
                 return true;
-            }
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+
     }
 
 
@@ -108,9 +138,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e("onre","onrestar");
+        setToolbar();
+    }
+
     private void initView() {
         viewPager = findViewById(R.id.viewPager);
         tabLayout = findViewById(R.id.tabLayout);
+
+        toolbar = findViewById(R.id.toolbar);
+        badgeCounter =findViewById(R.id.badge_counter);
+
+
 
     }
 }

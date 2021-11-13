@@ -2,11 +2,13 @@ package com.example.connectbd.ViewModel;
 
 import android.app.Application;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.connectbd.Listener.BadgeCounterListener;
 import com.example.connectbd.Listener.ProductListener;
 import com.example.connectbd.Model.Product;
 import com.example.connectbd.Repository.ProductRepository;
@@ -24,12 +26,13 @@ import java.util.List;
 
 public class ProductViewModel extends AndroidViewModel {
 
-    private MutableLiveData<List<Product>> productList=new MutableLiveData<>();
+    private MutableLiveData<List<Product>> productList = new MutableLiveData<>();
     private Application application;
     private ProductRepository productRepository;
+    private BadgeCounterListener counterListener;
 
     private MutableLiveData<List<HashMap>> cartHasMap = new MutableLiveData<>();
-    private ArrayList<HashMap> hashMaps=new ArrayList<>();
+
 
     private PrefUtil prefUtil;
 
@@ -39,37 +42,74 @@ public class ProductViewModel extends AndroidViewModel {
         this.application = application;
         this.productRepository = new ProductRepository();
         prefUtil = new PrefUtil(application);
+
     }
+
 
     public MutableLiveData<List<Product>> getProductList(int categoryId) {
         return productRepository.getProductListFromApi(categoryId);
     }
 
-    public void addProductIntoCart(int productId, int quantity, Double price){
+    public void addProductIntoCart(int productId, int quantity, Double price) {
 
+        ArrayList<HashMap> hashMaps = new ArrayList<>();
 
-        if(hasProductIdInCart(productId)){
-            Log.e("message","product id is in cart");
-        }else{
+        if (hasProductIdInCart(productId)) {
+            Toast.makeText(application, "Product id is in cart", Toast.LENGTH_SHORT).show();
+        } else {
             HashMap<String, String> cart = new HashMap<>();
 
-            cart.put("product_id",String.valueOf(productId));
-            cart.put("quantity",String.valueOf(quantity));
-            cart.put("price",String.valueOf(price));
+            cart.put("product_id", String.valueOf(productId));
+            cart.put("quantity", String.valueOf(quantity));
+            cart.put("price", String.valueOf(price));
+
+            JSONArray data = null;
+
+            try {
+                data = new JSONArray(prefUtil.getValueWithKey("itemInCart"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+
+            if(data!=null){
+                for(int i=0;i<data.length();i++){
+
+                    HashMap<String , String> map = new HashMap<>();
+                    try {
+                        map.put("product_id",String.valueOf(data.getJSONObject(i).getString("product_id")));
+                        map.put("quantity",data.getJSONObject(i).getString("quantity"));
+                        map.put("price",data.getJSONObject(i).getString("price"));
+
+                        hashMaps.add(map);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
 
             hashMaps.add(cart);
 
-            cartHasMap.postValue(hashMaps);
 
-            prefUtil.setValueWithKey("itemInCart",String.valueOf(hashMaps));
+            prefUtil.setValueWithKey("itemInCart", String.valueOf(hashMaps));
 
-            Log.e("CartHashMap",new Gson().toJson(cartHasMap));
+            Toast.makeText(application, "Product id added successfully", Toast.LENGTH_SHORT).show();
+
+            counterListener.incrementCounter(totalProductInCart());
+
+            Log.e("hashMap",new Gson().toJson(hashMaps));
+
+
         }
 
 
-
-
     }
+
+
+
 
     private boolean hasProductIdInCart(int productId) {
         String items = prefUtil.getValueWithKey("itemInCart");
@@ -81,10 +121,10 @@ public class ProductViewModel extends AndroidViewModel {
             e.printStackTrace();
         }
 
-        if(data!=null){
-            for(int i=0;i<data.length();i++){
+        if (data != null) {
+            for (int i = 0; i < data.length(); i++) {
                 try {
-                    if(Integer.valueOf(data.getJSONObject(i).getString("product_id"))==productId){
+                    if (Integer.valueOf(data.getJSONObject(i).getString("product_id")) == productId) {
                         return true;
                     }
                 } catch (JSONException e) {
@@ -96,8 +136,33 @@ public class ProductViewModel extends AndroidViewModel {
         return false;
     }
 
+    public void setIncrementBadgeListener(BadgeCounterListener mListener){
+        if(counterListener==null){
+            this.counterListener = mListener;
+        }
+    }
 
-    public MutableLiveData<List<HashMap>> totalCartItem(){
+    public int totalProductInCart() {
+
+        String items = prefUtil.getValueWithKey("itemInCart");
+
+        JSONArray data = null;
+        try {
+            data = new JSONArray(items);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        if (data != null) {
+            return data.length();
+        }else{
+            return 0;
+        }
+
+    }
+
+
+    public MutableLiveData<List<HashMap>> totalCartItem() {
         return this.cartHasMap;
     }
 }
